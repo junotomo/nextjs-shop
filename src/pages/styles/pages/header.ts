@@ -1,4 +1,4 @@
-import { styled } from "@stitches/react"
+import { keyframes, styled } from "@stitches/react"
 
 export const HeaderContainer = styled('header',{
     padding: '2rem 0',
@@ -33,11 +33,18 @@ export const CartButton = styled('button', {
     }
     
 })
+const slide = keyframes({
+    'from': {
+        right: -480,
+    },
+    'to': { 
+        right: 0,
+    },
+  });
 
 export const  CartContainer = styled('aside', {
-    position: 'absolute',
+    position: 'fixed',
     background: '$gray800',
-    right: 0,
     top: 0,
     width: 480,
     height:'100%',
@@ -47,7 +54,14 @@ export const  CartContainer = styled('aside', {
     flexDirection: 'column',
     justifyContent: 'space-between',
     boxSizing: 'border-box',
+
+    animation: `${slide}`,
+    animationDuration: '1s',
+    animationFillMode: 'forwards',
+
 })
+
+
 
 export const CartHeader = styled('div', {
     display: 'flex',

@@ -34,7 +34,7 @@ export default function Header() {
     }
 
     return(
-            <HeaderContainer>
+            <HeaderContainer data-show={shouldDisplayCart}>
                 <Image src={logo} width={52} height={52} alt="" />
                 <CartButton onClick={handleCartClick}>
                     <span>{cartCount}</span>
